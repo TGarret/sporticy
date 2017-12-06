@@ -1,33 +1,28 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
+fr:
+  activerecord:
+    errors:
+      models:
+        room:
+          attributes:
+            activity_name:
+            description:
+            activity_type:
+            compentence_developed:
+            max_participant:
+            duration:
+            address:
+            siren:
+            price:
 
-en:
-  hello: "Hello world"
+
+    attributes:
+        room:
+            activity_name: "Le nom de l'activité"
+            description: "La description de l'activité"
+            activity_type: "Le type d'activité"
+            compentence_developed: "La compétence sportive développée"
+            max_participant: "Le nombre maximum de participant"
+            duration: "La durée"
+            address: "L'adresse"
+            siren: "Le numéro SIREN"
+            price: "Le prix"
