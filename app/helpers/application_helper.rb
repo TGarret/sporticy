@@ -1,5 +1,5 @@
 module ApplicationHelper
   def avatar_url(user)
-    user.avart.url 
+    user.avatar.url 
   end
 end
