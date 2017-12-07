@@ -7,13 +7,13 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find(params[:id])
-    activity = @review.room
+    activity = @review.activity
     @review.destroy
     redirect_to activity
   end
 
 
   private
-  def reviews_prams
+  def review_prams
     params.require(:reviews.permit(:comment, :star, :activity_id)
 end
