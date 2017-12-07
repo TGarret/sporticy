@@ -10,5 +10,7 @@ root 'pages#home'
 resources :users, only: [:show]
 resources :activities
 resources :photos
+resources :reviews, only:[:create, :destroy]
+
 
 end
