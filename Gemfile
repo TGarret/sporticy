@@ -16,6 +16,7 @@ gem 'rails-i18n'
 gem 'paperclip'
 gem 'toastr-rails'
 gem 'font-awesome-sass'
+gem 'paperclip-cloudinary' #permet de mettre les photos sur le cloud pour que l'app tourne quand elle est sur heroku
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

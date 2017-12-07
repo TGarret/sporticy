@@ -1,0 +1,7 @@
+Pour cloudinary (garder les photos enregistrées sur le cloud)
+
+-> cloudinary.yml
+
+on se connecte sur heroku, on tape sur l'app cloudinary depuis heroku, on obtient la clé à utiliser, coper/coller sur "cloud_name" dans le fichier
+
+une fois qu'on a fait git push heroku, sur le terminal on marque "heroku config:set CLOUDINARY_API_KEY=(API Key)" puis "heroku config:set CLOUDINARY_API_SECRET=(API secret)"
