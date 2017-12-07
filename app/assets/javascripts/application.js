@@ -18,7 +18,7 @@
 //= require bootstrap-sprockets
 
 toastr.options = {
- 
+
  "positionClass": "toast-bottom-right"
- 
- }
+
+}

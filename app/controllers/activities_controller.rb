@@ -29,10 +29,10 @@ before_action :require_same_user, only: [:edit, :update]
 
 	def show
 		@photos = @activity.photos
-		@booked = Reservation.where("activity_id = ? AND user_id = ?", @room.id, current_user.id).present?
-		if current_user
-			@reviews = @activity.reviews@hasReview = @reviexs.find_by(user_id: current_user.id) if current_user
-		end
+		# @booked = Reservation.where("activity_id = ? AND user_id = ?", @activity.id, current_user.id).present?
+		# if current_user
+		# 	@reviews = @activity.reviews@hasReview = @reviews.find_by(user_id: current_user.id) if current_user
+		# end
 	end
 
 	def edit

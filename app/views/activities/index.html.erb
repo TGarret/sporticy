@@ -1,59 +1,31 @@
 <div class="row">
- 
-      <div class="col-md-3">
- 
-            <ul class="sidebar-list">
- 
-                   <li class="sidebar-item"><%= link_to "Mes annonces", activities_path, 
-class: "sidebar-link active" %></li>
- 
-            </ul>
- 
-       </div>
- 
-       <div class="col-md-9">
- 
-            <div class="panel panel-default">
- 
-                 <div class="panel-heading">Mes activités
- 
-                 </div>
- 
-  
-                <div class="panel-body">
- 
-                      <% @activities.each do |activity| %>
- 
-                         <div class="row">
- 
-                                 <div class="col-md-2">
- 
-                                      <%= image_tag activity.photos[0].image.url(:thumb) if activity.photos.length > 0 %> 
- 
-                                 </div>                              
- 
-                                 <div class="col-md-7">
- 
-                                        <h4><%= activity.activity_name %></h4>
- 
-                                 </div>                              
- 
-                                 <div class="col-md-3 right">
- 
-                                     <%= link_to "Mettre à jour", edit_activity_path(activity), class: "btn btn-primary" %>
- 
-                                 </div>
- 
-                        </div>
- 
-                        <hr>
- 
-                   <% end %>
- 
-               </div>
- 
-           </div>
- 
-     </div>
- 
+  <div class="col-md-3">
+    <ul class="sidebar-list">
+      <li class="sidebar-item"><%= link_to "Mes annonces", activities_path, class: "sidebar-link active" %></li>
+    </ul>
+  </div>
+
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-heading">Mes activités</div>
+
+      <div class="panel-body">
+        <% @activities.each do |activity| %>
+          <div class="row">
+            <div class="col-md-2">
+              <%= image_tag activity.photos[0].image.url(:thumb) if activity.photos.length > 0 %>
+            </div>
+
+            <div class="col-md-7">
+              <h4><%= activity.activity_name %></h4>
+            </div>
+              <div class="col-md-3 right">
+                <%= link_to "Mettre à jour", edit_activity_path(activity), class: "btn btn-primary" %>
+              </div>
+          </div>
+          <hr>
+        <% end %>
+      </div>
+    </div>
+  </div>
  </div>

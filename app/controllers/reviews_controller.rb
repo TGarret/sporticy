@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find(params[:id])
-    activity = @review.room
+    activity = @review.activity
     @review.destroy
     redirect_to activity
   end
