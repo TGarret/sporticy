@@ -19,14 +19,14 @@
 
     <h4>Annonces (<%= @activities.length %>)</h4><br>
     <div class="row">
-      <% @activities.each do |activitie| %>
+      <% @activities.each do |activity| %>
       <div class="col-md-4">
         <div class="panel panel-defaul">
           <div class="panel-heading preview">
-            <%= image_tag activitie.photos[0].image.url(:medium) if activitie.photos.length > 0 %>
+            <%= image_tag activity.photos[0].image.url(:medium) if activity.photos.length > 0 %>
           </div>
           <div class="panel-body">
-            <%= link_to activitie.listing_name, activitie %>
+            <%= link_to activity.activity_name, activity %>
           </div>
         </div>
       </div>

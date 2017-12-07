@@ -1,15 +1,22 @@
 <div class="panel panel-default">
     <div class="panel-body">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 05dd990870c971a512081f8bf2aa04a7e8dcc57d
         <!-- Photo principale de l'annonce -->
         <div class="row">
             <div class="col-md-12">
                 <%= image_tag @photos[0].image.url(), class:"img-responsive" if @photos.length >0 %>
             </div>
         </div>
+<<<<<<< HEAD
 
         <br>
 
+=======
+        <br>
+>>>>>>> 05dd990870c971a512081f8bf2aa04a7e8dcc57d
         <!-- Informations principales -->
         <div class="row">
             <div class="col-md-8">
@@ -42,7 +49,7 @@
                                 <%= @activity.activity_type %>
                             </div>
                             <div class="col-sm-3">
-                                <%= @activity.max_participant %> <%= @activity.max_participant > 1 ? "Participants" : "Participant" %>
+                                <%= @activity.max_participant %>
                             </div>
                             <div class="col-sm-3">
                                 <%= @activity.competence_developed %>
@@ -91,6 +98,10 @@
                                     <%= render "reviews/list" %>
                         <% end %>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 05dd990870c971a512081f8bf2aa04a7e8dcc57d
                       <!-- Wrapper for slides -->
                       <div class="carousel-inner" role="listbox">
                         <% if @photos %>
@@ -114,5 +125,30 @@
                     </div>
                 </div>
             </div>
+
+      <br>
+<!-- Google maps -->
+        <div class="row">
+            <div class="col-md-12">
+                <div id="map"></div>
+
+                <script>
+                  function initMap() {
+                    var uluru = {lat: <%= @activity.latitude %>, lng: <%= @activity.longitude %>};
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                      zoom: 15,
+                      center: uluru
+                    });
+                    var marker = new google.maps.Marker({
+                      position: uluru,
+                      map: map
+                    });
+                  }
+                </script>
+                <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClhT9Do4YID5-zjV_yRTeUP_03L1i5Ud0&callback=initMap">
+                </script>
+            </div>
+        </div>
     </div>
 </div>
