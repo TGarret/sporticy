@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171207133919) do
+ActiveRecord::Schema.define(version: 20171207173538) do
 
   create_table "activities", force: :cascade do |t|
     t.string "activity_name"
@@ -40,6 +40,19 @@ ActiveRecord::Schema.define(version: 20171207133919) do
     t.integer "image_file_size"
     t.datetime "image_updated_at"
     t.index ["activity_id"], name: "index_photos_on_activity_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "activity_id"
+    t.datetime "date"
+    t.integer "participant"
+    t.integer "price"
+    t.integer "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_reservations_on_activity_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|

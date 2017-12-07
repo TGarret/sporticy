@@ -72,6 +72,81 @@
             <div class="form-group">
               <label>Numéro de SIREN</label>
               <%= f.text_field :siren, placeholder: "ex: 123456789", class: "form-control" %>
+=======
+    <div class="panel-heading">
+        Proposez votre Activité !
+    </div>
+    <div class="panel-body">
+        <div class="container">
+
+            <%= form_for @activity, html: {multipart: true} do |f| %>
+                <%= render "shared/errors" %>
+
+            <div class="row">
+                    <div class="col-md-4 select">
+                        <div class="form-group">
+                            <label>Activity type</label>
+                            <%= f.select :activity_type, [["Athlétisme","Athlétisme"], ["Sports collectifs","Sports collectifs"], ["Gymnastique","Gymnastique"], ["Sports mécaniques","Sports mécaniques"], ["Sports de raquette","Sports de raquette"], ["Sport avec animaux","Sport avec animaux"], ["Cyclisme","Cyclisme"],["Sports de combat","Sports de combat"], ["Sport de force", "Sport de force"], ["Sports aériens","Sports aériens"], ["Sports de cible","Sports de cible"], ["Sports nautiques","Sports nautiques"], ["Sports de montagne", "Sports de montagne"], ["Sports cérébraux"]], id: "activity_type",
+                            prompt: "A sélectionner...", class: "form-control" %>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 select">
+                        <div class="form-group">
+                            <label>Compétences dévelopées</label>
+                            <%= f.select :competence_developed, [["Equilibre","Equilibre"], ["Force","Force"], ["Motricité","Motricité"], ["Vitesse","Vitesse"], ["Endurance","Endurance"], ["Concentration","Concentration"], ["Réflexe","Réflexe"], ["Dextérité","Dextérité"]],
+                            prompt: "A sélectionner...", class: "form-control" %>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 select">
+                        <div class="form-group">
+                            <label> Nombre maximum de participant ?</label>
+                        <%= f.text_field :max_participant, placeholder: "Nombre max de participants", class: "form-control" %>
+                        </div>
+                    </div>
+
+                </div>
+
+            <div class="row">
+                    <div class="col-md-4 select">
+                    <div class="form-group">
+                        <label>Durée de l'activité</label>
+                        <%= f.select :duration, [["moins de 10 minutes",1], ["de 10 à 20 minutes",2],
+                        ["de 20 à 30 minutes", 3], ["de 30 à 40 minutes",4], ["moins d'une heure",6], ["plus d'une heure",7]],
+                        prompt: "Sélectionner le nombre", class: "form-control" %>
+                    </div>
+                    </div>
+
+                 <div class="col-md-4 select">
+                        <div class="form-group">
+                            <label>Numéro de SIREN</label>
+                            <%= f.text_field :siren, placeholder: "ex: 123456789", class: "form-control" %>
+                        </div>
+                 </div>
+            </div>
+
+            <div class="row">
+                    <div class="form-group">
+                        <label>Donnez un nom à votre activité</label>
+                        <%= f.text_field :activity_name, placeholder: "Nom de l'activité", class: "form-control" %>
+                    </div>
+                </div>
+
+            <div class="row">
+                    <div class="form-group">
+                        <label>Description</label>
+                        <%= f.text_area :description, rows:4, placeholder: "Décrivez l'expérience qui va être vécu par le client dans sa globalité",
+                        class: "form-control" %>
+                    </div>
+                </div>
+
+            <div class="row">
+                    <div class="form-group">
+                        <label>Adresse</label>
+                        <%= f.text_field :address, placeholder: "Où se situe l'activité proposée?", class: "form-control" %>
+                    </div>
+                </div>
             </div>
           </div>
         </div>
