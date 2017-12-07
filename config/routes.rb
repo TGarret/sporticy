@@ -9,5 +9,6 @@ root 'pages#home'
 
 resources :users, only: [:show]
 resources :activities
+resources :photos
 
 end

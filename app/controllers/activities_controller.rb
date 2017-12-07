@@ -43,7 +43,7 @@ before_action :require_same_user, only: [:edit, :update]
 				end
 			end
 			@photos = @activity.photos
-			redirect_to adit_activity_path(@activity), notice: "Modification enregistrée..."
+			redirect_to edit_activity_path(@activity), notice: "Modification enregistrée"
 		else
 			render :edit
 		end
