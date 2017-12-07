@@ -63,6 +63,7 @@
             </div>
             <div class="col-md-4">
                 <!-- Formulaire de réservation -->
+                <%= render 'reservations/form' %>
             </div>
         </div>
 
@@ -90,7 +91,7 @@
                             <!-- Reviews -->
                             <div class ="row">
                               <div class = "col-md-12"></div>
-                                <h3>Commentaires <span id="average_rating"></span> (<%= reviews.count %>)</h3>
+                                <h3>Commentaires <span id="average_rating"></span> (<%=@reviews.count %>)</h3>
                                 <div class = "container">
                                   <div>
                                     <%= render "reviews/form" if @booked && !@hasReview %>
