@@ -1,0 +1,44 @@
+{
+  "authors": [
+    "Washington Botelho <wbotelhos@gmail.com> (http://wbotelhos.com)"
+  ],
+  "description": "jQuery Raty - A Star Rating Plugin",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  },
+  "homepage": "https://github.com/wbotelhos/raty",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "spec",
+    "vendor"
+  ],
+  "keywords": [
+    "classificacao",
+    "classificar",
+    "javascript",
+    "jquery",
+    "library",
+    "plugin",
+    "rating",
+    "raty",
+    "star",
+    "staring",
+    "votar",
+    "voto"
+  ],
+  "license": "MIT",
+  "main": "lib/jquery.raty.js",
+  "name": "raty",
+  "version": "2.8.0",
+  "_release": "2.8.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.8.0",
+    "commit": "fc11036f44fd8349f47083272b32471dca66cb9d"
+  },
+  "_source": "https://github.com/wbotelhos/raty.git",
+  "_target": "^2.8.0",
+  "_originalSource": "raty",
+  "_direct": true
+}
