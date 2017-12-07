@@ -1,0 +1,13 @@
+<% unless @activity.errors.empty? %>
+ 
+ <script type="text/javascript">
+ 
+     <% @activity.errors.full_messages.each do |msg| %>
+ 
+               toastr.error('<%= msg %>')
+ 
+     <% end %>
+ 
+ </script>
+ 
+ <% end %>
