@@ -37,19 +37,20 @@
 
 
 <h4>Evaluation</h4><br>
-<% @rooms.each do |room| %>
-<% if !room.reviews.blank? %>
-    <% room.reviews.each do |review| %>
+<% @activities.each do |activitie| %>
+<% if !activitie.reviews.blank? %>
+    <% activitie.reviews.each do |review| %>
         <div class = "row" >
           <div class = "col-md-2 text-center">
-            <%= image_tag avatar_url(review.user). class: "img-circle avartar-medium" %><br>
+            <%= image_tag avatar_url(review.user). class "img-circle avartar-medium" %><br>
             <%= review.user.fullname %>
           </div>
           <div class = "col-md-10">
-            <%= link_to room.listing_name, activity %><br>
+            <%= link_to activity.listing_name, activity %><br>
             <%= review.comment %><br>
           <%= review.created_at.strftime("(%d/%m/%y)") %>
         </div>
     </div>
   <% end %>
-<% end %>
+  <% end %>
+  <% end %>
