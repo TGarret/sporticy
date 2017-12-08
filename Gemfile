@@ -18,6 +18,8 @@ gem 'toastr-rails'
 gem 'font-awesome-sass'
 gem 'paperclip-cloudinary' #permet de mettre les photos sur le cloud pour que l'app tourne quand elle est sur heroku
 gem 'geocoder'
+gem 'jquery-ui-rails' 
+
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

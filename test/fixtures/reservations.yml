@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  activity: one
+  date: 2017-12-07 18:35:38
+  participant: 1
+  price: 1
+  total: 1
+
+two:
+  user: two
+  activity: two
+  date: 2017-12-07 18:35:38
+  participant: 1
+  price: 1
+  total: 1
