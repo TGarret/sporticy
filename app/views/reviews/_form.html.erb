@@ -3,19 +3,14 @@
     <%= f.text_field :comment %>
     <%= f.hidden_field :activity_id, value: @activity.id %>
     <div class = "actions">
-        <%= f.submit %>
+      <%= f.submit %>
     </div>
 <% end %>
+
 <script>
-
-      $('#user_stars').raty({
-
-      path: '/assets',
-
-      scoreName: 'review[star]',
-
-      score: 1
-
-      });
-
+  $('#user_stars').raty({
+    path: '/assets',
+    scoreName: 'review[star]',
+    score: 1
+  });
  </script>

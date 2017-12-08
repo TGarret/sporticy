@@ -21,7 +21,7 @@ before_action :require_same_user, only: [:edit, :update]
 				end
 			end
 			@photos = @activity.photos
-			redirect_to edit_activity_path(@activity), notice: "Votre activité a été ajouté avec succès"
+			redirect_to activities_path, notice: "Votre activité a été ajouté avec succès"
 		else
 			render :new
 		end
