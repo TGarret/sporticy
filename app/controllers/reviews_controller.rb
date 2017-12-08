@@ -12,7 +12,6 @@ class ReviewsController < ApplicationController
     redirect_to activity
   end
 
-
   private
   def review_params
     params.require(:reviews.permit(:comment, :star, :activity_id)
