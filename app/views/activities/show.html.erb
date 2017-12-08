@@ -100,7 +100,7 @@
             <!-- Formulaire de réservation -->
             <%= render "reservations/form" %>
         </div>
-    </div>
+      </div>
 
         <!-- Description -->
         <div class="row">
@@ -134,7 +134,7 @@
                                 <div class = "container">
                                   <div>
                                     <%= render "reviews/form" if @booked && !@hasReview %>
-                              </div>
+                                  </div>
                                     <%= render "reviews/list" %>
                         <% end %>
 
@@ -165,7 +165,7 @@
         </div>
 
       <br>
-<!-- Google maps -->
+      <!-- Google maps -->
         <div class="row">
             <div class="col-md-12">
                 <div id="map"></div>
@@ -184,7 +184,11 @@
                   }
                 </script>
                 <script async defer
+<<<<<<< HEAD
                   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBV3BNxCoQjhdRF4HEw6zt8rw7PBqzrHOE&callback=initMap">
+=======
+                  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClhT9Do4YID5-zjV_yRTeUP_03L1i5Ud0&callback=initMap">
+>>>>>>> 8900b1350f18a016d6b13a5d4255f44cf3ef18a3
                 </script>
             </div>
         </div>
@@ -203,20 +207,24 @@
                        </div>
                     </div>
                  </div>
-             <% end %>
+      <% end %>
     </div>
+<<<<<<< HEAD
 
 </div>
+=======
+  </div>
+>>>>>>> 8900b1350f18a016d6b13a5d4255f44cf3ef18a3
 </div>
 
 
 
 <script>
-            $('#average_rating').raty({
-                path: '/assets',
-                readOnly: true,
-                score: <%= @activity.average_rating %>
-            });
+  $('#average_rating').raty({
+    path: '/assets',
+    readOnly: true,
+    score: <%= @activity.average_rating %>
+  });
 </script>
 
 

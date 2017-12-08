@@ -8,19 +8,18 @@
     <%= f.hidden_field :activity_id, value: @activity.id %>
 >>>>>>> 1bf45949222f325b0a029e049fb2227e3d7bdd24
     <div class = "actions">
+<<<<<<< HEAD
         <%= f.submit "Evaluez", class: "btn btn-primary" %>
+=======
+      <%= f.submit %>
+>>>>>>> 8900b1350f18a016d6b13a5d4255f44cf3ef18a3
     </div>
 <% end %>
+
 <script>
-
-      $('#user_stars').raty({
-
-      path: '/assets',
-
-      scoreName: 'review[star]',
-
-      score: 1
-
-      });
-
+  $('#user_stars').raty({
+    path: '/assets',
+    scoreName: 'review[star]',
+    score: 1
+  });
  </script>
