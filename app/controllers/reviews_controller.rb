@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
-  def created
-    @review = current_user.reviews.create(reviews_prams)
+  def create
+    @review = current_user.reviews.create(review_params)
     redirect_to @review.activity
   end
 
@@ -14,6 +14,6 @@ class ReviewsController < ApplicationController
 
 
   private
-  def review_prams
+  def review_params
     params.require(:reviews.permit(:comment, :star, :activity_id)
 end

@@ -9,11 +9,11 @@ root 'pages#home'
 
 resources :users, only: [:show]
 resources :activities do
-	resources :reservations, only: [:create]
+resources :reservations, only: [:create]
+resources :reviews, only:[:create, :destroy]
 end
 
 resources :photos
-resources :reviews, only:[:create, :destroy]
 
 get '/preload'=>'reservations#preload'
 get '/preview'=>'reservations#preview'
