@@ -1,22 +1,151 @@
 <%= form_for([@activity, @activity.reservations.new]) do |f| %>
 
-	<%= f.text_field :date %>
+
+<div class="row">
+        <div class="col-md-12 price_tag">
+            <span>€ <%= @activity.price %></span>
+            <span class="pull-right">La séance</span>
+        </div>
+</div>
+
+<div class="row">
+         <div class="col-md-6">
+         <label>Date de réservation</label>
+         <%= f.text_field :date, readonly: 'true', placeholder: 'jj/mm/aaaa', class: 'form-control' %>
+         </div>
+</div>
+
+
+<h5><div id="message"></div></h5>
+
+<div id="preview" style="display: none">
+       <table class="reservation-table" >
+               <tbody>
+                    <tr>
+                         <td>Total</td>
+                         <td><span id="reservation_sum"></span>€</td>
+                   </tr>
+               </tbody>
+        </table>
+ </div>
+
 	<%= f.text_field :participant %>
 
 	<%= f.hidden_field :activity_id, value: @activity.id %>
 	<%= f.hidden_field :price, value: @activity.price %>
+	<%= f.hidden_field :total, id: 'reservation_total' %>
 
-	<%= f.submit "Demande de réservation", class:"btn btn-primary" %>
+	<%= f.submit "Demande de réservation", id:"btn_book", class:"btn btn-primary wide", disabled: "true" %>
 
 	<% end %>
 
 	<script>
-		$(function(){
-			$('#reservation_date').datepicker({
-				dateFormat: 'dd-mm-yy',
-				monthNames: ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Aout','Septembre','Octobre','Novembre','Décembre'],
-				dayNamesMin: ['D','L','M','M','J','V','S','D']
-			});
-		})
 
+    $(function(){
+                
+        $.ajax({
+            url: '/preload',
+            data: {'activity_id': <%= @activity.id %>},
+            dataType: 'json',
+            success: function(data) {
+                $.each(data, function(arrID, arrValue){
+                    for(var d = new Date(arrValue.date); d <= new Date(arrValue.date);
+                    d.setDate(d.getDate() +1)) {
+                        unavailableDates.push($.datepicker.formatDate('d-m-yy', d));
+                    }
+                })
+                
+                $('#reservation_date').datepicker({
+                    dateFormat: 'dd-mm-yy',
+                    monthNames: ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août',
+                    'Septembre','Octobre','Novembre','Décembre'],
+                    dayNamesMin: ['D','L','M','M','J','V','S'],
+                    minDate: 0,
+                    maxDate: '3m',
+                    // beforeShowDay: unavailable,
+                    onSelect: function(selected) {
+                        var newdate = new Date($("#reservation_date").datepicker("getDate"));
+                        newdate.setDate(newdate.getDate() + 1);
+                        
+                        var date = $(this).datepicker('getDate');                        
+                        
+                        var input = {
+                            'date': date,
+                            'activity_id': <%= @activity.id %>
+                            
+                        }
+                            
+                            $.ajax({
+                                url: '/preview',
+                                data: input,
+                                success: function(data) {
+                                        $('#message').hide();
+                                        $('#preview').show();
+                                        $('#btn_book').attr('disabled', false);
+                                        
+                                        var total = days * <%= @activity.price %>
+                                        $('#reservation_days').text(days);
+                                        $('#reservation_sum').text(total);
+                                        $('#reservation_total').val(total);
+                                    }
+                                
+                                });
+                            }
+                });
+            }
+        });
+    });
+
+
+                
+                // $('#reservation_end_date').datepicker({
+                //     dateFormat: 'dd-mm-yy',
+                //     monthNames: ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août',
+                //     'Septembre','Octobre','Novembre','Décembre'],
+                //     dayNamesMin: ['D','L','M','M','J','V','S'],
+                //     minDate: 0,
+                //     maxDate: '3m',
+                //     beforeShowDay: unavailable,
+                //     onSelect: function(selected) {
+                //         $('#reservation_start_date').datepicker("option", "maxDate", selected);
+                        
+                //         var start_date = $('#reservation_start_date').datepicker('getDate');
+                //         var end_date = $(this).datepicker('getDate');
+                //         var diff = (end_date - start_date)/1000/60/60/24;
+                //         var days = Math.round(diff);
+                        
+                        
+                //         var input = {
+                //             'start_date': start_date,
+                //             'end_date': end_date,
+                //             'activity_id': <%= @activity.id %>
+                            
+                //         }
+                            
+                //             $.ajax({
+                //                 url: '/preview',
+                //                 data: input,
+                //                 success: function(data) {
+                //                     if (data.conflict) {
+                //                         $('#message').show();
+                //                         $('#message').text("Ces dates sont indisponibles");
+                //                         $('#preview').hide();
+                //                         $('#btn_book').attr('disabled', true);
+                //                     } else {
+                //                         $('#message').hide();
+                //                         $('#preview').show();
+                //                         $('#btn_book').attr('disabled', false);
+                                        
+                //                         var total = days * <%= @activity.price %>
+                //                         $('#reservation_days').text(days);
+                //                         $('#reservation_sum').text(total);
+                //                         $('#reservation_total').val(total);
+                //                     }
+                                
+                //                 }
+                //             });
+                        
+                    // }
+                // });
+                
 </script>

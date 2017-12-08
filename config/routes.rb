@@ -15,5 +15,8 @@ end
 resources :photos
 resources :reviews, only:[:create, :destroy]
 
+get '/preload'=>'reservations#preload'
+get '/preview'=>'reservations#preview'
+
 
 end

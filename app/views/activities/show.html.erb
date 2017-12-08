@@ -8,9 +8,7 @@
     </div>
 
     <br>
-    <!-- Informations principales -->
-    <div class="row">
-      <div class="col-md-8">
+
         <!-- Photo principale de l'annonce -->
         <div class="row">
             <div class="col-md-3 text-center">
@@ -25,6 +23,8 @@
                 <div class="row text-center row-space-1">
                     <div class="col-sm-3">
                         <i class="fa fa-home fa-2x"></i>
+                      </div>
+                    </div>
         <!-- Informations principales -->
         <div class="row">
             <div class="col-md-8">
@@ -64,6 +64,7 @@
       </div>
         <div class="col-md-4">
             <!-- Formulaire de réservation -->
+            <%= render "reservations/form" %>
         </div>
     </div>
 
@@ -122,6 +123,8 @@
                     </div>
                 </div>
             </div>
+          </div>
+        </div>
 
       <br>
 <!-- Google maps -->
@@ -143,7 +146,7 @@
                   }
                 </script>
                 <script async defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClhT9Do4YID5-zjV_yRTeUP_03L1i5Ud0&callback=initMap">
+                  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASJqYUgMezJ_j1Os9CG1U72Tdr_37oGqM&callback=initMap">
                 </script>
             </div>
         </div>
@@ -164,8 +167,10 @@
                  </div>
              <% end %>
     </div>
-  </div>
+    
 </div>
+</div>
+
 
 
 <script>
