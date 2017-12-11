@@ -27,6 +27,10 @@ def your_experiences
 	@experiences = current_user.reservations
 end
 
+def your_reservations
+	@activities = current_user.activities
+end
+
 
 private
 
