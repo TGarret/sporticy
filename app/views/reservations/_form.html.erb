@@ -50,9 +50,10 @@
             success: function(data) {
                 $.each(data, function(arrID, arrValue){
                     for(var d = new Date(arrValue.date); d <= new Date(arrValue.date);
-                    d.setDate(d.getDate() +1)) {
-                        unavailableDates.push($.datepicker.formatDate('d-m-yy', d));
-                    }
+                    d.setDate(d.getDate() +1)) 
+                    // {
+                    //     unavailableDates.push($.datepicker.formatDate('d-m-yy', d));
+                    // }
                 })
                 
                 $('#reservation_date').datepicker({
@@ -83,10 +84,10 @@
                                         $('#preview').show();
                                         $('#btn_book').attr('disabled', false);
                                         
-                                        var total = days * <%= @activity.price %>
-                                        $('#reservation_days').text(days);
-                                        $('#reservation_sum').text(total);
-                                        $('#reservation_total').val(total);
+                                        // var total = participant * <%= @activity.price %>
+                                        // $('#participant_number').text(days);
+                                        // $('#reservation_sum').text(total);
+                                        // $('#reservation_total').val(total);
                                     }
                                 
                                 });
