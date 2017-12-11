@@ -390,6 +390,7 @@ input[type="checkbox"]:checked:before {
 
 }
 
+<<<<<<< HEAD
 .wide {
  width: 100%;
  }
@@ -412,3 +413,40 @@ input[type="checkbox"]:checked:before {
   color: #82888A;
   text-decoration: none;
 }
+=======
+
+.wide {
+
+ width: 100%;
+
+ }
+
+
+.price_tag {
+
+       background-color: #606567;
+
+       color: #fff;
+
+       font-size: 20px;
+
+       padding: 10px;
+
+       margin-bottom: 10px;
+
+ }
+
+ .conversation {
+
+       color: #7f7f7f;
+
+       padding: 10px;
+
+ }
+
+ .conversation:hover, .conversation:focus {
+
+     background-color: #F4F4F5;
+
+ } 
+>>>>>>> 097a3b3aee5b7ff54529a4445fb0f4ce076f80a7

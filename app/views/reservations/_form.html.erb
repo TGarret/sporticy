@@ -42,7 +42,7 @@
 	<script>
 
     $(function(){
-                
+
         $.ajax({
             url: '/preload',
             data: {'activity_id': <%= @activity.id %>},
@@ -50,12 +50,12 @@
             success: function(data) {
                 $.each(data, function(arrID, arrValue){
                     for(var d = new Date(arrValue.date); d <= new Date(arrValue.date);
-                    d.setDate(d.getDate() +1)) 
-                    // {
-                    //     unavailableDates.push($.datepicker.formatDate('d-m-yy', d));
-                    // }
+                    d.setDate(d.getDate() +1))
+                    {
+                        unavailableDates.push($.datepicker.formatDate('d-m-yy', d));
+                    }
                 })
-                
+
                 $('#reservation_date').datepicker({
                     dateFormat: 'dd-mm-yy',
                     monthNames: ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août',
@@ -67,15 +67,15 @@
                     onSelect: function(selected) {
                         var newdate = new Date($("#reservation_date").datepicker("getDate"));
                         newdate.setDate(newdate.getDate() + 1);
-                        
-                        var date = $(this).datepicker('getDate');                        
-                        
+
+                        var date = $(this).datepicker('getDate');
+
                         var input = {
                             'date': date,
                             'activity_id': <%= @activity.id %>
-                            
+
                         }
-                            
+
                             $.ajax({
                                 url: '/preview',
                                 data: input,
@@ -83,13 +83,13 @@
                                         $('#message').hide();
                                         $('#preview').show();
                                         $('#btn_book').attr('disabled', false);
-                                        
+
                                         // var total = participant * <%= @activity.price %>
                                         // $('#participant_number').text(days);
                                         // $('#reservation_sum').text(total);
                                         // $('#reservation_total').val(total);
                                     }
-                                
+
                                 });
                             }
                 });
@@ -98,7 +98,7 @@
     });
 
 
-                
+
                 // $('#reservation_end_date').datepicker({
                 //     dateFormat: 'dd-mm-yy',
                 //     monthNames: ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août',
@@ -109,20 +109,20 @@
                 //     beforeShowDay: unavailable,
                 //     onSelect: function(selected) {
                 //         $('#reservation_start_date').datepicker("option", "maxDate", selected);
-                        
+
                 //         var start_date = $('#reservation_start_date').datepicker('getDate');
                 //         var end_date = $(this).datepicker('getDate');
                 //         var diff = (end_date - start_date)/1000/60/60/24;
                 //         var days = Math.round(diff);
-                        
-                        
+
+
                 //         var input = {
                 //             'start_date': start_date,
                 //             'end_date': end_date,
                 //             'activity_id': <%= @activity.id %>
-                            
+
                 //         }
-                            
+
                 //             $.ajax({
                 //                 url: '/preview',
                 //                 data: input,
@@ -136,17 +136,17 @@
                 //                         $('#message').hide();
                 //                         $('#preview').show();
                 //                         $('#btn_book').attr('disabled', false);
-                                        
+
                 //                         var total = days * <%= @activity.price %>
                 //                         $('#reservation_days').text(days);
                 //                         $('#reservation_sum').text(total);
                 //                         $('#reservation_total').val(total);
                 //                     }
-                                
+
                 //                 }
                 //             });
-                        
+
                     // }
                 // });
-                
+
 </script>

@@ -16,6 +16,7 @@
 //= require rails-ujs
 //= require toastr
 //= require_tree .
+//= require rails-timeago-all
 
 toastr.options = {
 

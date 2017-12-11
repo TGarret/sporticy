@@ -1,38 +1,39 @@
 <div class="row">
-  <div class="col-md-3">
-    <ul class="sidebar-list">
-      <li class="sidebar-item"><%= link_to "Mes annonces", activities_path, class: "sidebar-link" %></li>
-      <li class="sidebar-item"><%= link_to "Mes réservations", activities_path, class: "sidebar-link" %></li>
-      <li class="sidebar-item"><%= link_to "Mes expériences", your_experiences_path, class: "sidebar-link active" %></li>
-    </ul>
-  </div>
-
-  <div class="col-md-9">
-    <div class="panel panel-default">
-      <div class="panel-heading">Mes expériences</div>
-
-      <div class="panel-body">
-        <% @experiences.order("id DESC").each do |experience| %>
-          <div class="row">
-           <div class="col-md-2">
-            Le <%= experience.date.strftime('%d.%m.%y') %>
-          </div>
-          <div class="col-md-6">
-            <%= link_to activity_path(experience.activity) do %>
-            <%= image_tag experience.activity.photos[0].image.url(:thumb) if experience.ativity.photos.length > 0 %>
-            <% end %>
-      </div>
-      <div class ="col-md-2">
-        <%= link_to user_path(experience.activity.user) do %>
-        <%= image_tag avatar_url(experience.activity.user), class:"img-circle avatar-medium" %>
-        <% end %>
+    <div class="col-md-3">
+        <ul class="sidebar-list">
+            <li class="sidebar-item"><%= link_to "Mes activités", activities_path, class:"sidebar-link" %></li>
+            <li class="sidebar-item"><%= link_to "Mes réservations", mes_reservations_path, class:"sidebar-link" %></li>
+            <li class="sidebar-item"><%= link_to "Mes expériences", mes_experiences_path, class:"sidebar-link active" %></li>
+        </ul>
     </div>
-    <div class="col-md-2 right">
-      <h4><%= experience.total %> €</h4>
-    <hr>
-    <% end %>
-
-  </div>
- </div>
+    <div class="col-md-9">
+        <div class="panel panel-default">
+            <div class="panel-heading"> Mes expériences</div>
+            <div class="panel-body">
+                <% @experiences.order("id DESC").each do |experience| %>
+                <div class="row">
+                   <div class="col-md-2">
+                       Le <%= experience.date.strftime('%d.%m.%y') %>
+                   </div>
+                   <div class="col-md-6">
+                       <%= link_to activity_path(experience.activity) do %>
+                           <%= image_tag experience.activity.photos[0].image.url(:thumb) if experience.activity.photos.length > 0 %>
+                       <% end %>
+                   </div>
+                   <div class="col-md-2">
+                       <%= link_to user_path(experience.activity.user) do %>
+                           <%= image_tag avatar_url(experience.activity.user), class:"img-circle avatar-medium" %>
+                       <% end %>
+                   </div>
+                   <div class="col-md-2 right">
+                       <h4><%= experience.total %> €</h4>
+                   </div>
+                </div>
+                <hr>
+                <% end %>
+            </div>
+        </div>
+    </div>
 </div>
+
 
