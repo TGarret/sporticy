@@ -3,7 +3,7 @@ class ConversationsController < ApplicationController
 
     def index
       @users = User.all
-      @conversations = conversation.involving(current_user)
+      @conversations = Conversation.involving(current_user)
     end
 
     def create
@@ -18,5 +18,5 @@ class ConversationsController < ApplicationController
   private
    def conversation_params
      params.permit(:sender_id, :recipient_id)
-
-end
+   end
+ end
