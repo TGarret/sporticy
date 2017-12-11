@@ -380,34 +380,48 @@ input[type="checkbox"]:checked:before {
   width: 100%;
  }
 
-.reservation-table td {       
- 
+.reservation-table td {
+
        width: 100%;
- 
-       border: 1px solid #dce0e0;       
- 
+
+       border: 1px solid #dce0e0;
+
        padding: 10px;
- 
+
 }
- 
-  
+
+
 .wide {
- 
+
  width: 100%;
- 
+
  }
- 
-  
+
+
 .price_tag {
- 
+
        background-color: #606567;
- 
+
        color: #fff;
- 
+
        font-size: 20px;
- 
+
        padding: 10px;
- 
+
        margin-bottom: 10px;
- 
+
  }
+
+ .conversation {
+
+       color: #7f7f7f;
+
+       padding: 10px;
+
+ }
+
+ .conversation:hover, .conversation:focus {
+
+     background-color: #F4F4F5;
+
+ } 
