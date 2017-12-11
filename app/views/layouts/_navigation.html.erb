@@ -14,7 +14,13 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
           <%=link_to new_activity_path do %>
-            <i class="fa fa-home fa-lg"></i> Proposez votre activité
+             Proposez votre activité
+          <%end%>
+        </li>
+
+        <li>
+          <%= link_to conversations_path do %>
+             Messages
           <%end%>
         </li>
 
@@ -34,7 +40,7 @@
               <li><%= link_to "Mes activités", activities_path %></li>
               <li><%= link_to "Mes réservations", mes_reservations_path %></li>
               <li><%= link_to 'Modifier mon profil', edit_user_registration_path %></li>
-             
+
               <li role="separator" class="divider"></li>
               <li><%= link_to 'Déconnexion', destroy_user_session_path,method: :delete %></li>
             </ul>
