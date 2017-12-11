@@ -18,6 +18,7 @@ resources :photos
 
 get '/preload'=>'reservations#preload'
 get '/preview'=>'reservations#preview'
+get '/your_experiencises' => 'reservations#your_trips'
 
 
 end

@@ -23,6 +23,9 @@ def create
 	redirect_to @reservation.activity, notice: "Votre réservation a bien été envoyé"
 end
 
+def your_experiences
+	@experiences = current_user.reservations
+end
 
 
 private
