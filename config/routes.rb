@@ -8,17 +8,23 @@ Rails.application.routes.draw do
 root 'pages#home'
 
 resources :users, only: [:show]
-resources :activities, path: "annonces" do
-	resources :reservations, only: [:create]
-  resources :reviews, only:[:create, :destroy]
+resources :activities do
+resources :reservations, only: [:create]
+resources :reviews, only:[:create, :destroy]
+
 end
 
 resources :photos
 
-ressources :conversations, only: [:index, :create]
+resources :conversations, only: [:index, :create] do
+resources :messages, only: [:index, :create]
+end
+
+
 
 get '/preload'=>'reservations#preload'
 get '/preview'=>'reservations#preview'
+get '/your_experiencises' => 'reservations#your_trips'
 
 
 end

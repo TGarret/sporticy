@@ -35,39 +35,6 @@
                         <br>
                         <%= @activity.user.fullname %>
                     </div>
-<<<<<<< HEAD
-                    <div class="col-md-9">
-                        <h4><%= @activity.activity_name %></h4>
-                        <a href="#map", class = "sidebar-link"><%= @activity.address %></a> <a href = "#average_rating", class = "sidebar-link"><span id="average_rating_header"></span><%= @reviews.count %></a>
-                        <div class="row text-center row-space-1">
-                            <div class="col-sm-3">
-                                <i class="fa fa-home fa-2x"></i>
-                            </div>
-                            <div class="col-sm-3">
-                                <i class="fa fa-users fa-2x"></i>
-                            </div>
-                            <div class="col-sm-3">
-                                <i class="fa fa-bed fa-2x"></i>
-                            </div>
-                            <div class="col-sm-3">
-                                <i class="fa fa-bath fa-2x"></i>
-                            </div>
-                        </div>
-                        <div class="row text-center">
-                            <div class="col-sm-3">
-                                <%= @activity.activity_type %>
-                            </div>
-                            <div class="col-sm-3">
-                                <%= @activity.max_participant %>
-                            </div>
-                            <div class="col-sm-3">
-                                <%= @activity.competence_developed %>
-                            </div>
-                            <div class="col-sm-3">
-                                <%= @activity.duration %> <!-- Problème de correspondance, affiche l'id mais pas la durée -->
-                            </div>
-                        </div>
-=======
                     <div class="col-sm-3">
                         <i class="fa fa-users fa-2x"></i>
                     </div>
@@ -90,7 +57,6 @@
                     </div>
                     <div class="col-sm-3">
                         <%= @activity.duration %> <!-- Problème de correspondance, affiche l'id mais pas la durée -->
->>>>>>> 1bf45949222f325b0a029e049fb2227e3d7bdd24
                     </div>
                 </div>
             </div>
@@ -121,22 +87,21 @@
                                 <li data-target="#myCarousel" data-slide-to="<%= photo.id %>" class="active"></li>
                               </ol>
                             <% end %>
+                            <%end%>
                             <br>
                             <hr>
+
                             <!-- Reviews -->
                             <div class ="row">
                               <div class = "col-md-12"></div>
-<<<<<<< HEAD
-                                <h3><%= pluralize(@reviews.count, "commentaire") %> <span id="average_rating"></span></h3>
-=======
                                 <h3>Commentaires <span id="average_rating"></span> (<%=@reviews.count %>)</h3>
->>>>>>> 1bf45949222f325b0a029e049fb2227e3d7bdd24
                                 <div class = "container">
                                   <div>
                                     <%= render "reviews/form" if @booked && !@hasReview %>
                                   </div>
                                     <%= render "reviews/list" %>
-                        <% end %>
+                                  </div>
+                                </div>
 
                       <!-- Wrapper for slides -->
                       <div class="carousel-inner" role="listbox">
@@ -161,9 +126,6 @@
                     </div>
                 </div>
             </div>
-          </div>
-        </div>
-
       <br>
       <!-- Google maps -->
         <div class="row">
@@ -184,11 +146,7 @@
                   }
                 </script>
                 <script async defer
-<<<<<<< HEAD
-                  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBV3BNxCoQjhdRF4HEw6zt8rw7PBqzrHOE&callback=initMap">
-=======
                   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClhT9Do4YID5-zjV_yRTeUP_03L1i5Ud0&callback=initMap">
->>>>>>> 8900b1350f18a016d6b13a5d4255f44cf3ef18a3
                 </script>
             </div>
         </div>
@@ -209,14 +167,8 @@
                  </div>
       <% end %>
     </div>
-<<<<<<< HEAD
-
-</div>
-=======
   </div>
->>>>>>> 8900b1350f18a016d6b13a5d4255f44cf3ef18a3
 </div>
-
 
 
 <script>
@@ -225,13 +177,4 @@
     readOnly: true,
     score: <%= @activity.average_rating %>
   });
-</script>
-
-
-<script>
-            $('#average_rating_header').raty({
-                path: '/assets',
-                readOnly: true,
-                score: <%= @activity.average_rating %>
-            });
 </script>
