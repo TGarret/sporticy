@@ -11,9 +11,15 @@ resources :users, only: [:show]
 resources :activities, path: "activités" do
 resources :reservations, only: [:create]
 resources :reviews, only:[:create, :destroy]
+
 end
 
 resources :photos
+
+resources :conversations, only: [:index, :create] do
+resources :messages, only: [:index, :create]
+end
+
 
 
 get '/preload'=>'reservations#preload'
