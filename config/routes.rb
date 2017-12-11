@@ -11,10 +11,7 @@ resources :users, only: [:show]
 resources :activities do
 resources :reservations, only: [:create]
 resources :reviews, only:[:create, :destroy]
-<<<<<<< HEAD
 
-=======
->>>>>>> 36887741151e6e7bb0e2f60f5cf43c8e9892065f
 end
 
 resources :photos
