@@ -51,9 +51,8 @@
                 $.each(data, function(arrID, arrValue){
                     for(var d = new Date(arrValue.date); d <= new Date(arrValue.date);
                     d.setDate(d.getDate() +1)) 
-                    // {
-                    //     unavailableDates.push($.datepicker.formatDate('d-m-yy', d));
-                    // }
+                    { unavailableDates.push($.datepicker.formatDate('d-m-yy', d));
+                 }
                 })
                 
                 $('#reservation_date').datepicker({
