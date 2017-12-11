@@ -15,6 +15,7 @@ end
 
 resources :photos
 
+ressources :conversations, only: [:index, :create]
 
 get '/preload'=>'reservations#preload'
 get '/preview'=>'reservations#preview'
