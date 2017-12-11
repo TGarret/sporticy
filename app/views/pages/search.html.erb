@@ -1,0 +1,77 @@
+<div id="wrapper">
+  <div id="sidebar">
+    <div id="widget">
+
+    </div>
+  </div>
+
+  <div id="article">
+    <div class="row">
+      <div class="col-md-12">
+        <%= search_form_for @search, url: search_path do |f| %>
+          <div class="row">
+            <div class="col-md-3">
+              <%= text_field_tag :date, params[:date], placeholder:"Jours", class:"form-control" %>
+            </div>
+            <div class="col-md-3">
+              <%= f.text_field  :price_gteq, placeholder: "Buget min", class: "form-control" %>
+            </div>
+            <div class="col-md-3">
+              <%= f.text_field  :price_lteq, placeholder: "Buget max", class: "form-control" %>
+            </div>
+          </div>
+
+          <hr>
+
+
+
+          <br>
+
+          <div class="row">
+            <%= f.submit "Rechercher", class:"btn btn-primary" %>
+          </div>
+        <% end %>
+
+        <hr>
+
+        <div class="row">
+          <% if @arrActivities.empty? %>
+            Aucune annonce ne correpond à votre recherche.
+          <% else %>
+            <% @arrActivities.each do |activity| %>
+              <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading preview">
+                      <%= image_tag activity.photos[0].image.url(:medium) if activity.photos.length > 0 %>
+                    </div>
+                    <div class="panel-body">
+                      <%= image_tag avatar_url(activity.user), class:"img-circle avatar-small" %>
+                      <%= link_to activity.listing_name, activity %>
+                    </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  $(function() {
+    $('#date').datepicker({
+      dateFormat: 'dd-mm-yy',
+      monthNames: ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août',
+      'Septembre','Octobre','Novembre','Décembre'],
+      dayNamesMin: ['D','L','M','M','J','V','S'],
+      minDate: 0,
+      maxDate: '3m',
+      onSelect: function(selected) {
+        var newdate = new Date($("#start_date").datepicker("getDate"));
+        newdate.setDate(newdate.getDate() + 1);
+      }
+    });
+  })
+</script>

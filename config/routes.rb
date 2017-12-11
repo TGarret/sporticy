@@ -21,4 +21,6 @@ get '/preview'=>'reservations#preview'
 get '/your_experiencises' => 'reservations#your_trips'
 
 
+get "/search" => "pages#search"
+
 end

@@ -1,1 +1,68 @@
-<h2>Bienvenue sur notre première page !!</h2>
+<div class="row">
+  <div class="col-md-8">
+    <div class="text-center">
+      <h1>Créés vos aticvités sportive ou réserver les!!!</h1>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<%= form_tag search_path, method: :get do %>
+  <div class="row">
+    <div class="col-md-6">
+      <%= text_field_tag :search, params[:search], placeholder: "Où? Destination, ville, adresse",
+      class:"form-control" %>
+    </div>
+    <div class="col-md-2">
+      <%= text_field_tag :date, params[:date], placeholder:"Jours", class:"form-control" %>
+    </div>
+    <div class="col-md-2">
+      <%= submit_tag "Rechercher", class:"btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
+
+
+<br>
+<hr>
+<br>
+
+<div class="row">
+  <div class="col-md-4">
+    <h4>Annonces</h4>
+  </div>
+</div>
+
+<div class="row">
+  <% @activities.each do |activity| %>
+    <div class="col-md-4">
+      <div class="panel panel-defaul">
+        <div class="panel-heading preview">
+          <%= image_tag activity.photos[0].image.url(:medium) if activity.photos.length > 0 %>
+        </div>
+        <div class="panel-body">
+          <p class="home-link"><b><%= link_to activity.price, activity_path(activity) %> € - <%= link_to activity.activity_type, activity_path(activity) %></b>
+          <br><%= link_to activity, activity_path(activity) %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<script>
+  $(function() {
+    $('#date').datepicker({
+      dateFormat: 'dd-mm-yy',
+      monthNames: ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août',
+      'Septembre','Octobre','Novembre','Décembre'],
+      dayNamesMin: ['D','L','M','M','J','V','S'],
+      minDate: 0,
+      maxDate: '3m',
+      onSelect: function(selected) {
+        var newdate = new Date($("#reservation_date").datepicker("getDate"));
+        newdate.setDate(newdate.getDate() + 1);
+      }
+    });
+  })
+</script>

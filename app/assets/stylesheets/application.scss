@@ -380,34 +380,35 @@ input[type="checkbox"]:checked:before {
   width: 100%;
  }
 
-.reservation-table td {       
- 
+.reservation-table td {
+
        width: 100%;
- 
-       border: 1px solid #dce0e0;       
- 
+
+       border: 1px solid #dce0e0;
+
        padding: 10px;
- 
+
 }
- 
-  
+
 .wide {
- 
  width: 100%;
- 
  }
- 
-  
+
 .price_tag {
- 
-       background-color: #606567;
- 
-       color: #fff;
- 
-       font-size: 20px;
- 
-       padding: 10px;
- 
-       margin-bottom: 10px;
- 
- }
+
+  background-color: #606567;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+ .home-link a,p{
+  color: #82888A;
+  text-decoration: none;
+}
+
+.home-link:hover a, .home-link:focus a{
+  color: #82888A;
+  text-decoration: none;
+}
