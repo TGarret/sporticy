@@ -26,8 +26,8 @@ end
 
 get '/preload'=>'reservations#preload'
 get '/preview'=>'reservations#preview'
-get 'mes_experiences' => 'reservations#your_experiences'
-get 'mes_reservations' => 'reservations#your_reservations'
+get '/mes_experiences' => 'reservations#your_experiences'
+get '/mes_reservations' => 'reservations#your_reservations'
 
 
 get "/search" => "pages#search"

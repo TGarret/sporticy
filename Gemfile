@@ -13,7 +13,6 @@ gem 'jbuilder'
 gem 'devise'
 gem 'devise-i18n'
 gem 'rails-i18n'
-gem 'paperclip'
 gem 'toastr-rails'
 gem 'font-awesome-sass'
 gem 'paperclip-cloudinary' #permet de mettre les photos sur le cloud pour que l'app tourne quand elle est sur heroku
@@ -21,6 +20,9 @@ gem 'geocoder'
 gem 'jquery-ui-rails'
 gem 'ransack'
 gem 'rails-timeago'
+gem 'paperclip', :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523bd46c768226893f23889079a7aa9c73b57d68'
+
+
 
 group :development, :test do
   gem 'sqlite3'
