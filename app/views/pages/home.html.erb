@@ -60,7 +60,7 @@
       minDate: 0,
       maxDate: '3m',
       onSelect: function(selected) {
-        var newdate = new Date($("#reservation_date").datepicker("getDate"));
+        var newdate = new Date($("#date").datepicker("getDate"));
         newdate.setDate(newdate.getDate() + 1);
       }
     });
