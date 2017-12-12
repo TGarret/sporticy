@@ -4,21 +4,22 @@
       <div class = "panel-heading">Boite de réception</div>
       <div class = "container">
         <% @conversations.each do |conversation| %>
-        <% other = conversation.sender == current_user ? conversation.recipient : conversation.sender %>
-        <% link_to conversation_messages_path(conversation) do %>
-        <div class = "row conversation">
-          <div class = "col-md-2">
-            <% image_tag avatar_url(other), class: "img-circle avatar-medium" %>
-          </div>
-          <div class = "col-md-2">
-            <%= other.fullname %><br>
-            <%= timeago_tag conversation.message.last.created_at, :lang=>:fr %>
-          </div>
-          <div class = "col-md-8">
-            <%= conversation.messages.last.content %>
+          <% other = conversation.sender == current_user ? conversation.recipient : conversation.sender %>
+
+          <%= link_to conversation_messages_path(conversation) do %>
+            <div class = "row conversation">
+              <div class = "col-md-2">
+                <% image_tag avatar_url(other), class: "img-circle avatar-medium" %>
+              </div>
+              <div class = "col-md-2">
+                <%= other.fullname %><br>
+                <%= timeago_tag conversation.message.last.created_at, :lang=>:fr %>
+              </div>
+              <div class = "col-md-8">
+                <%= conversation.messages.last.content %>
+              </div>
             </div>
-        </div>
-        <% end %>
+          <% end %>
         <% end %>
       </div>
     </div>

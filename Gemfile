@@ -22,8 +22,11 @@ gem 'jquery-ui-rails'
 gem 'ransack'
 gem 'rails-timeago'
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> e5d925667b565b16357853ee303a8bcc25300dd8
 group :development, :test do
   gem 'sqlite3', '1.3.13'
   gem 'byebug',  '9.0.6', platform: :mri
@@ -34,6 +37,8 @@ group :development do
   gem 'listen',                '3.0.8'
   gem 'spring',                '2.0.2'
   gem 'spring-watcher-listen', '2.0.1'
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :test do
@@ -45,6 +50,7 @@ end
 
 group :production do
   gem 'pg', '0.18.4'
+  gem 'rails_12factor'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
