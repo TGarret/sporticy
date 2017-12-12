@@ -1,6 +1,6 @@
 production:
 
-  cloud_name: "clé cloudinary"
+  cloud_name: "hevuyqoei"
 
   api_key: <%= ENV["CLOUDINARY_API_KEY"] %>
 
