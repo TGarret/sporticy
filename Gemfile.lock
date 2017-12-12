@@ -289,11 +289,8 @@ DEPENDENCIES
   rails (= 5.1.2)
   rails-controller-testing (= 1.0.2)
   rails-i18n
-<<<<<<< HEAD
-  ransack
-=======
   rails-timeago
->>>>>>> 097a3b3aee5b7ff54529a4445fb0f4ce076f80a7
+  ransack
   sass-rails (= 5.0.6)
   spring (= 2.0.2)
   spring-watcher-listen (= 2.0.1)
