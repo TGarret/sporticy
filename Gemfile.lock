@@ -285,42 +285,42 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt
+  bcrypt (= 3.1.11)
   better_errors
   binding_of_caller
-  bootstrap-sass
-  byebug
-  coffee-rails
+  bootstrap-sass (= 3.3.7)
+  byebug (= 9.0.6)
+  coffee-rails (= 4.2.2)
   devise
   devise-i18n
   font-awesome-sass
   geocoder
-  guard
-  guard-minitest
-  jbuilder
-  jquery-rails
+  guard (= 2.13.0)
+  guard-minitest (= 2.4.4)
+  jbuilder (= 2.7.0)
+  jquery-rails (= 4.3.1)
   jquery-ui-rails
-  listen
-  minitest-reporters
+  listen (= 3.0.8)
+  minitest-reporters (= 1.1.14)
   paperclip!
   paperclip-cloudinary
-  pg
-  puma
-  rails
-  rails-controller-testing
+  pg (= 0.18.4)
+  puma (= 3.9.1)
+  rails (= 5.1.2)
+  rails-controller-testing (= 1.0.2)
   rails-i18n
   rails-timeago
   rails_12factor
   ransack
-  sass-rails
-  spring
-  spring-watcher-listen
-  sqlite3
+  sass-rails (= 5.0.6)
+  spring (= 2.0.2)
+  spring-watcher-listen (= 2.0.1)
+  sqlite3 (= 1.3.13)
   toastr-rails
-  turbolinks
+  turbolinks (= 5.0.1)
   tzinfo-data
-  uglifier
-  web-console
+  uglifier (= 3.2.0)
+  web-console (= 3.5.1)
 
 BUNDLED WITH
    1.16.0
