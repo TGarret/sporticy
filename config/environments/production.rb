@@ -1,6 +1,6 @@
 Rails.application.configure do
 
-  Paperclip::Attachement.default_options.merge!({
+  Paperclip::Attachment.default_options.merge!({
     :storage=>:cloudinary,
     :path=>'id/:style/:filename'
     })
