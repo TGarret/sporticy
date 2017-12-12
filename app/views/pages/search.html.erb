@@ -21,7 +21,7 @@
             var marker = new google.maps.Marker({
               position: {lat: <%= activity.latitude %>, lng: <%= activity.longitude %>},
               map: map
-              title: "<%= activity.listing_name %>"
+              title: "<%= activity.activities_name %>"
             });
           <% end %>
         }
@@ -72,7 +72,7 @@
                     </div>
                     <div class="panel-body">
                       <%= image_tag avatar_url(activity.user), class:"img-circle avatar-small" %>
-                      <%= link_to activity.listing_name, activity %>
+                      <%= link_to activity.activities_name, activity %>
                     </div>
                 </div>
               </div>
