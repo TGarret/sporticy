@@ -8,3 +8,5 @@ une fois qu'on a fait git push heroku, sur le terminal on marque "heroku config:
 
 * faire la section 12 et 13 une fois qu'on a push sur heroku (sendgrid/envoie de mails de confirmation et app Facebook)
 
+Il faut rentrer USERNAME et PASSWORD de sendgrid dans .bashrc (fichier caché) - Section 12 / session 115 
+
