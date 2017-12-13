@@ -6,7 +6,7 @@ Rails.application.configure do
     })
 
 config.action_mailer.delivery_method = :smtp
-config.action_mailer.default_url_options = { :host => 'http://localhost:3000', :protocol => 'https'}
+config.action_mailer.default_url_options = { :host => 'sporticy.herokuapp.com', :protocol => 'https'}
 
   # Settings specified here will take precedence over those in config/application.rb.
 
