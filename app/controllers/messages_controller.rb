@@ -13,7 +13,6 @@ def index
 end
 
 
-
 def create
   @message = @conversation.messages.new(message_params)
   @message = @conversation.messages.order(":created_at DESC")

@@ -21,6 +21,9 @@ gem 'jquery-ui-rails'
 gem 'ransack'
 gem 'rails-timeago'
 gem 'paperclip', :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523bd46c768226893f23889079a7aa9c73b57d68'
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
