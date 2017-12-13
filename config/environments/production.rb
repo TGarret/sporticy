@@ -2,7 +2,7 @@ Rails.application.configure do
 
   Paperclip::Attachment.default_options.merge!({
     :storage=>:cloudinary,
-    :path=>'id/:style/:filename'
+    :path=>':id/:style/:filename'
     })
 
 config.action_mailer.delivery_method = :smtp
