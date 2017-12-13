@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby                    '2.3.5'
+ruby                    '2.4.1'
 gem 'rails',            '5.1.2'
 gem 'bcrypt',           '3.1.11' #permt d'utiliser la fonction has_secure_password dans mon model user
 gem 'bootstrap-sass',   '3.3.7'  #ajout du css avec les classe deja pret
