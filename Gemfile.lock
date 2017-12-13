@@ -304,10 +304,7 @@ DEPENDENCIES
   rails-controller-testing (= 1.0.2)
   rails-i18n
   rails-timeago
-<<<<<<< HEAD
-=======
   rails_12factor
->>>>>>> e5d925667b565b16357853ee303a8bcc25300dd8
   ransack
   sass-rails (= 5.0.6)
   spring (= 2.0.2)
