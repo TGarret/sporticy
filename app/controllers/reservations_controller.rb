@@ -20,7 +20,11 @@ end
 
 def create
 	@reservation = current_user.reservations.create(reservation_params)
+	if reservation.save
+	AppMailer.new_reservation(Activity.find(@reservation.activity_id), @reservation).deliver_now
 	redirect_to @reservation.activity, notice: "Votre réservation a bien été envoyé"
+
+	end
 end
 
 def your_experiences
