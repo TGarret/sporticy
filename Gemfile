@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby                    '2.4.1'
 gem 'rails',            '5.1.2'
 gem 'bcrypt',           '3.1.11' #permt d'utiliser la fonction has_secure_password dans mon model user
 gem 'bootstrap-sass',   '3.3.7'  #ajout du css avec les classe deja pret
@@ -13,7 +13,6 @@ gem 'jbuilder',         '2.7.0'
 gem 'devise'
 gem 'devise-i18n'
 gem 'rails-i18n'
-gem 'paperclip'
 gem 'toastr-rails'
 gem 'font-awesome-sass'
 gem 'paperclip-cloudinary' #permet de mettre les photos sur le cloud pour que l'app tourne quand elle est sur heroku
@@ -21,6 +20,10 @@ gem 'geocoder'
 gem 'jquery-ui-rails'
 gem 'ransack'
 gem 'rails-timeago'
+gem 'paperclip', :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523bd46c768226893f23889079a7aa9c73b57d68'
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 
 
 group :development, :test do
