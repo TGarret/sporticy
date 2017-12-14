@@ -4,7 +4,7 @@ class AppMailer < ActionMailer::BASE
     @user = User.find(room.user_id)
     @reservation = reservation
     @activity = activity
-    mail(from: 'Sporticy <no-reply@sporticy.fr', to: @user.email, subject: "Nouvelle réservation" )
+    mail(from: 'Sporticy <no-reply@sporticy.fr>', to: @user.email, subject: "Nouvelle réservation" )
   end
 
 end
