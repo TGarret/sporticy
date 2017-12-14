@@ -2,11 +2,15 @@ Rails.application.configure do
 
   Paperclip::Attachment.default_options.merge!({
     :storage=>:cloudinary,
-    :path=>'id/:style/:filename'
+    :path=>':id/:style/:filename'
     })
 
 config.action_mailer.delivery_method = :smtp
+<<<<<<< HEAD
 config.action_mailer.default_url_options = { :host => 'http://localhost:3000', :protocol => 'https'}
+=======
+config.action_mailer.default_url_options = { :host => 'sporticy.herokuapp.com', :protocol => 'https'}
+>>>>>>> b491cc2d1ced980c0bfd709b2c4e950108cba259
 
   # Settings specified here will take precedence over those in config/application.rb.
 
