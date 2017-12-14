@@ -24,10 +24,6 @@ gem 'paperclip', :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523b
 gem 'omniauth'
 gem 'omniauth-facebook'
 
-<<<<<<< HEAD
-
-=======
->>>>>>> b491cc2d1ced980c0bfd709b2c4e950108cba259
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
