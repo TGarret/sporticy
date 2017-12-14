@@ -12,7 +12,8 @@
       <div class = "panel-body">
         <div class = "container"></div>
           <%= form_for [@conversation, @conversation.messages.new], remote: true do |f| %>
-            <div class = "form-group">
+<!--           on enlève le remote: true
+ -->            <div class = "form-group">
               <%= f.text_area :content, placeholder: "Votre message...", class: "form-control" %>
             </div>
             <%= f.hidden_field :user_id, value: current_user.id %>
@@ -25,4 +26,5 @@
       </div>
     <div id = "chat">
       <%= render @messages, locals: {conversation: @conversation} %>
+      <!-- on met 'messages' à la place de @messages et on enlève locals: {conversation: @conversation} -->
     </div>

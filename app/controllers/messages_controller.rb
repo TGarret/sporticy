@@ -15,8 +15,9 @@ end
 
 def create
   @message = @conversation.messages.new(message_params)
-  @message = @conversation.messages.order(":created_at DESC")
-    if @message.save
+  @messages = @conversation.messages.order(":created_at DESC")
+    if @messages.save
+      #redirect_to conversation_messages_path(@conversation) à la place des 2 lignes en bas
       respond_to do |format|
         format.js
       end
