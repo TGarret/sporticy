@@ -1,0 +1,6 @@
+<p> Bonjour <%= @user.fullname%> </p>
+
+<p> Votre activité (<%=activity.activity_name %>) a une nouvelle réservation pour le: 
+	<%= @reservation.date.strftime("%d.%m.%y")%>
+
+Rendez vous sur https://sporticy.herokuapp.com/ pour voir la réservation !
