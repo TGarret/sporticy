@@ -1,0 +1,91 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <!-- Photo principale de l'annonce -->
+    <div class="row">
+      <div class="col-md-6">
+          <%= image_tag @photos[0].image.url(), class:"img-responsive" if @photos.length >0 %>
+      </div>
+     <div class="col-md-6">
+            <h4><%= @activity.activity_name %></h4>
+             <%= image_tag avatar_url(@activity.user), class:"img-circle avatar-large" %>
+             <br>
+             <br>
+              <%= @activity.user.fullname %> <br>
+              <%= @activity.activity_type %>
+
+    </div>
+
+    <br>
+        
+        <!-- Informations principales -->
+ 
+        
+        <div class="col-md-4">
+            <!-- Formulaire de réservation -->
+            <%= render "reservations/form" %>
+        </div>
+      </div>
+
+        <!-- Description -->
+        <div class="row">
+            <div class="col-md-12" style="text-align: center;">
+                <h2>A propos de cette activité</h2>
+                <p><%= @activity.description %></p>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        
+
+      <!-- Google maps -->
+        <div class="row">
+            <div class="col-md-12">
+                <div id="map"></div>
+
+                <script>
+                  function initMap() {
+                    var uluru = {lat: <%= @activity.latitude %>, lng: <%= @activity.longitude %>};
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                      zoom: 15,
+                      center: uluru
+                    });
+                    var marker = new google.maps.Marker({
+                      position: uluru,
+                      map: map
+                    });
+                  }
+                </script>
+                <script async defer
+                  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClhT9Do4YID5-zjV_yRTeUP_03L1i5Ud0&callback=initMap">
+                </script>
+            </div>
+        </div>
+
+      <h3>A proximité...</h3>
+         <div class="row">
+             <% for activity in @activity.nearbys(2).limit(3) %>
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                       <div class="panel-heading preview">
+                            <%= image_tag activity.photos[0].image.url(:medium) if activity.photos.length > 0 %>
+                       </div>
+                       <div class="panel-body">
+                         <%= link_to activity.activity_name, activity %><br>
+                          (à <%= (activity.distance*1.6).round(2) %> km)
+                       </div>
+                    </div>
+                 </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  $('#average_rating').raty({
+    path: '/assets',
+    readOnly: true,
+    score: <%= @activity.average_rating %>
+  });
+</script>
