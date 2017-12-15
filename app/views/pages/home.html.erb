@@ -42,8 +42,8 @@
           <%= image_tag activity.photos[0].image.url(:medium) if activity.photos.length > 0 %>
         </div>
         <div class="panel-body">
-          <p class="home-link"><b><%= link_to activity.price, activity_path(activity) %> € - <%= link_to activity.activity_type, activity_path(activity) %></b>
-          <br><%= link_to activity, activity_path(activity) %></p>
+          <p class="home-link"><b><%= link_to activity.price, activity_path(activity) %> € - <br><%= link_to activity.activity_type, activity_path(activity) %></b>
+          <br><%= link_to activity.activity_name                                                                                                                        , activity_path(activity) %></p>
         </div>
       </div>
     </div>

@@ -20,8 +20,8 @@
           <% @arrActivities.each  do |activity| %>
             var marker = new google.maps.Marker({
               position: {lat: <%= activity.latitude %>, lng: <%= activity.longitude %>},
-              map: map
-              title: "<%= activity.activities_name %>"
+              map: map,
+              title: "<%= activity.activity_name %>"
             });
           <% end %>
         }
@@ -49,8 +49,6 @@
           </div>
 
           <hr>
-
-
           <br>
 
           <div class="row">
@@ -72,7 +70,7 @@
                     </div>
                     <div class="panel-body">
                       <%= image_tag avatar_url(activity.user), class:"img-circle avatar-small" %>
-                      <%= link_to activity.activities_name, activity %>
+                      <%= link_to activity.activity_name, activity %>
                     </div>
                 </div>
               </div>
