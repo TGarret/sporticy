@@ -37,14 +37,97 @@
       <div class="col-md-12">
         <%= search_form_for @search, url: search_path do |f| %>
           <div class="row">
-            <div class="col-md-3">
-              <%= text_field_tag :date, params[:date], placeholder:"Jours", class:"form-control" %>
-            </div>
+
             <div class="col-md-3">
               <%= f.text_field  :price_gteq, placeholder: "Buget min", class: "form-control" %>
             </div>
             <div class="col-md-3">
               <%= f.text_field  :price_lteq, placeholder: "Buget max", class: "form-control" %>
+            </div>
+          </div>
+
+          <hr>
+
+
+          <div class="row">
+              <div class="col-md-4">
+                <%= check_box_tag "q[room_type_eq_any][]","En salle" %> En salle
+              </div>
+              <div class="col-md-4">
+                <%= check_box_tag "q[room_type_eq_any][]","En extérieur" %> En extérieur
+              </div>
+          </div>
+
+
+          <hr>
+          <br>
+
+          <div class="row">
+            <div class="col-md-4 select">
+              <div class="form-group">
+                <label>Max Participants:</label>
+                <%= f.select :max_participant_gteq,[["1 - 5",1],["5 - 10",2],
+                ["10 - 20",3], ["20 - 30",4] ,["30+",5]], prompt:"A sélectionner...",
+                class:"form-control" %>
+              </div>
+            </div>
+
+            <div class="col-md-5 select">
+              <div class="form-group">
+                <label>Durée de l'activité</label>
+                <%= f.select :duration,
+                [
+                  ["moins de 10 minutes", 1],
+                  ["de 10 à 20 minutes", 2],
+                  ["de 20 à 30 minutes", 3],
+                  ["de 30 à 40 minutes", 4],
+                  ["moins d'une heure", 6],
+                  ["plus d'une heure", 7]
+                ],
+                prompt: "Sélectionner le nombre", class: "form-control" %>
+              </div>
+            </div>
+
+            <div class="col-md-5 select">
+              <div class="form-group">
+                <label>Compétences dévelopées</label>
+                <%= f.select :competence_developed,
+                [
+                  ["Equilibre","Equilibre"],
+                  ["Force","Force"],
+                  ["Motricité","Motricité"],
+                  ["Vitesse","Vitesse"],
+                  ["Endurance","Endurance"],
+                  ["Concentration","Concentration"],
+                  ["Réflexe","Réflexe"],
+                  ["Dextérité","Dextérité"]
+                ],
+                prompt: "A sélectionner...", class: "form-control" %>
+              </div>
+            </div>
+
+            <div class="col-md-5 select">
+              <div class="form-group">
+                <label>Type d'activité</label>
+                <%= f.select :activity_type,
+                [
+                  ["Athlétisme","Athlétisme"],
+                  ["Sports collectifs","Sports collectifs"],
+                  ["Gymnastique","Gymnastique"],
+                  ["Sports mécaniques","Sports mécaniques"],
+                  ["Sports de raquette","Sports de raquette"],
+                  ["Sport avec animaux","Sport avec animaux"],
+                  ["Cyclisme","Cyclisme"],
+                  ["Sports de combat","Sports de combat"],
+                  ["Sport de force", "Sport de force"],
+                  ["Sports aériens","Sports aériens"],
+                  ["Sports de cible","Sports de cible"],
+                  ["Sports nautiques","Sports nautiques"],
+                  ["Sports de montagne", "Sports de montagne"],
+                  ["Sports cérébraux"]
+                ],
+                id: "activity_type",prompt: "A sélectionner...", class: "form-control" %>
+              </div>
             </div>
           </div>
 
