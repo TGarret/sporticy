@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171212175113) do
+ActiveRecord::Schema.define(version: 20171216161208) do
 
   create_table "activities", force: :cascade do |t|
     t.string "activity_name"
     t.text "description"
     t.string "activity_type"
+    t.string "activity_place"
     t.string "competence_developed"
     t.integer "max_participant"
     t.integer "duration"
@@ -28,6 +29,8 @@ ActiveRecord::Schema.define(version: 20171212175113) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.boolean "is_indoor"
+    t.boolean "is_outdoor"
     t.index ["user_id"], name: "index_activities_on_user_id"
   end
 
@@ -41,11 +44,11 @@ ActiveRecord::Schema.define(version: 20171212175113) do
   create_table "messages", force: :cascade do |t|
     t.text "content"
     t.integer "conversation_id"
-    t.integer "users_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
-    t.index ["users_id"], name: "index_messages_on_users_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "photos", force: :cascade do |t|

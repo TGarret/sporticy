@@ -79,15 +79,17 @@
               <%= f.text_field :siren, placeholder: "ex: 123456789", class: "form-control" %>
             </div>
           </div>
+
           <br>
           <br>
-              <div class="col-md-4">
-                <div class="check_box_activity">
-                <%= check_box_tag "q[room_type_eq_any][]","En salle" %> En salle 
-                <div class="check_box_activity_exterieur">
-                <%= check_box_tag "q[room_type_eq_any][]","En extérieur" %> En extérieur
-              </div>
-              </div>
+
+          <div class="col-md-4">
+            <div class="check_box_activity">
+              <%= f.check_box :is_indoor %> En salle
+            <div class="check_box_activity_exterieur">
+              <%= f.check_box :is_outdoor %> En extérieur
+            </div>
+          </div>
         </div>
       </div>
 

@@ -60,7 +60,7 @@ private
 	end
 
 	def activity_params
-		params.require(:activity).permit(:activity_name, :description, :activity_type, :activity_place, :competence_developed, :max_participant, :duration, :address, :siren, :price, :active)
+		params.require(:activity).permit(:activity_name, :description, :activity_type, :competence_developed, :max_participant, :duration, :address, :siren, :price, :active, :is_indoor, :is_outdoor)
 	end
 
 	def require_same_user

@@ -51,10 +51,10 @@
 
           <div class="row">
               <div class="col-md-4">
-                <%= check_box_tag "q[activity_place_eq_any][]","En salle" %> En salle
+                <%= check_box_tag "q[is_indoor_eq]", true %> En salle
               </div>
               <div class="col-md-4">
-                <%= check_box_tag "q[activity_place_eq_any][]","En extérieur" %> En extérieur
+                <%= check_box_tag "q[is_outdoor_eq]", true %> En extérieur
               </div>
           </div>
 
