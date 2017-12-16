@@ -39,10 +39,10 @@
           <div class="row">
 
             <div class="col-md-3">
-              <%= f.text_field  :price_gteq, placeholder: "Buget min", class: "form-control" %>
+              <%= f.text_field  :price_gteq, placeholder: "Budget min", class: "form-control" %>
             </div>
             <div class="col-md-3">
-              <%= f.text_field  :price_lteq, placeholder: "Buget max", class: "form-control" %>
+              <%= f.text_field  :price_lteq, placeholder: "Budget max", class: "form-control" %>
             </div>
           </div>
 
@@ -51,10 +51,10 @@
 
           <div class="row">
               <div class="col-md-4">
-                <%= check_box_tag "q[room_type_eq_any][]","En salle" %> En salle
+                <%= check_box_tag "q[activity_place_eq_any][]","En salle" %> En salle
               </div>
               <div class="col-md-4">
-                <%= check_box_tag "q[room_type_eq_any][]","En extérieur" %> En extérieur
+                <%= check_box_tag "q[activity_place_eq_any][]","En extérieur" %> En extérieur
               </div>
           </div>
 
@@ -75,7 +75,7 @@
             <div class="col-md-5 select">
               <div class="form-group">
                 <label>Durée de l'activité</label>
-                <%= f.select :duration,
+                <%= f.select :duration_gteq,
                 [
                   ["moins de 10 minutes", 1],
                   ["de 10 à 20 minutes", 2],
@@ -91,7 +91,7 @@
             <div class="col-md-5 select">
               <div class="form-group">
                 <label>Compétences dévelopées</label>
-                <%= f.select :competence_developed,
+                <%= f.select :competence_developed_gteq,
                 [
                   ["Equilibre","Equilibre"],
                   ["Force","Force"],
@@ -109,7 +109,7 @@
             <div class="col-md-5 select">
               <div class="form-group">
                 <label>Type d'activité</label>
-                <%= f.select :activity_type,
+                <%= f.select :activity_type_gteq,
                 [
                   ["Athlétisme","Athlétisme"],
                   ["Sports collectifs","Sports collectifs"],

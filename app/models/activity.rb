@@ -4,6 +4,7 @@ class Activity < ApplicationRecord
   has_many :reservations
   has_many :reviews
 
+  validates :activity_name, presence: true, length: {maximum: 50}
   validates :activity_type, presence: true
   validates :siren, presence: true, length: {maximum: 9}
   validates :address, presence: true
