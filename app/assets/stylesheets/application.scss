@@ -12,7 +12,6 @@ body {
  }
 
 
-
  .container {
  width: 100%;
  }
@@ -375,9 +374,30 @@ input[type="checkbox"]:checked:before {
       text-decoration: line-through
  }
 
- #map {
+
+  #map{
+  height: 350px;
+  width: 100%
+  }
+
+
+
+ .map_and_address {
+  height: 350px;
+  width: 50%;
+ }
+
+ .container_map {
+  display: flex;
   height: 400px;
   width: 100%;
+ }
+
+ .activity_comments{
+  height: 300px;
+  width: 50%;
+  margin-left: 50px;
+  text-align: center;
  }
 
 .reservation-table td {
@@ -498,3 +518,16 @@ input[type="checkbox"]:checked:before {
   padding-left: 30px;
 }
 
+.activity_image{
+  height: 400px;
+  width: 45%;
+}
+
+.activity_haut {
+  display: flex;
+}
+
+.container_informations {
+  height: 400px;
+  width: 50%;
+}

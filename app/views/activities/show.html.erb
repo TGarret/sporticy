@@ -2,15 +2,11 @@
   <div class="panel-body">
     <!-- Photo principale de l'annonce -->
     <div class="row">
-      <div class="col-md-6">
+      <div class="activity_image">
           <%= image_tag @photos[0].image.url(), class:"img-responsive" if @photos.length >0 %>
       </div>
      <div class="col-md-6">
             <h4><%= @activity.activity_name %></h4>
-             <%= image_tag avatar_url(@activity.user), class:"img-circle avatar-large" %>
-             <br>
-             <br>
-              <%= @activity.user.fullname %> <br>
               <%= @activity.activity_type %>
 
     </div>
@@ -18,8 +14,20 @@
     <br>
         
         <!-- Informations principales -->
- 
-        
+                    <div class="col-sm-3">
+                        <%= @activity.activity_type %>
+                    </div>
+                    <div class="col-sm-3">
+                        <%= @activity.max_participant %>
+                    </div>
+                    <div class="col-sm-3">
+                        <%= @activity.competence_developed %>
+                    </div>
+                    <div class="col-sm-3">
+                        <%= @activity.duration %> <!-- Problème de correspondance, affiche l'id mais pas la durée -->
+                    </div>
+
+
         <div class="col-md-4">
             <!-- Formulaire de réservation -->
             <%= render "reservations/form" %>
@@ -29,7 +37,9 @@
         <!-- Description -->
         <div class="row">
             <div class="col-md-12" style="text-align: center;">
-                <h2>A propos de cette activité</h2>
+                <h3>A propos de cette activité</h3>
+                 par <%= @activity.user.fullname %>
+                  <%= image_tag avatar_url(@activity.user), class:"img-circle avatar-large" %>
                 <p><%= @activity.description %></p>
             </div>
         </div>
@@ -39,10 +49,10 @@
         
 
       <!-- Google maps -->
-        <div class="row">
-            <div class="col-md-12">
-                <div id="map"></div>
-
+      <div class="container_map">
+              <div class ="map_and_address">
+                    <h4> Chope l'adresse: <%= @activity.address %></h4>
+                <div id="map">
                 <script>
                   function initMap() {
                     var uluru = {lat: <%= @activity.latitude %>, lng: <%= @activity.longitude %>};
@@ -59,7 +69,15 @@
                 <script async defer
                   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClhT9Do4YID5-zjV_yRTeUP_03L1i5Ud0&callback=initMap">
                 </script>
-            </div>
+                </div>
+              </div>
+
+   <!-- Reviews -->
+                    <div class= "activity_comments">
+                      <h3>Commentaires <span id="average_rating"></span> (<%=@reviews.count %>)</h3>
+                          <%= render "reviews/form" if @booked && !@hasReview %>
+                          <%= render "reviews/list" %>
+                      </div>
         </div>
 
       <h3>A proximité...</h3>
