@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20171216161208) do
     t.string "activity_name"
     t.text "description"
     t.string "activity_type"
+    t.string "activity_place"
     t.string "competence_developed"
     t.integer "max_participant"
     t.integer "duration"

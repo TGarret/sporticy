@@ -6,25 +6,30 @@
 
 
 body {
+  color: #565a5c;
+}
 
- color: #565a5c;
+.btn btn-info{
+  width: 50px;
+}
 
- }
-
+ .fond {
+  background-image: url(fond06.jpg);
+  background-repeat:no-repeat;
+  background-size: cover;
+}
 
  .container {
- width: 100%;
- }
+  width: 100%;
+}
 
  .navbar-default {
- background-color: #FFFFFF;
+   background-color: #FFFFFF;
  }
-
-
 
  .navbar-default .navbar-brand {
 
- color: #FF5A5F;
+ color: rgb(14, 179, 240);
 
  font-size: 2em;
 
@@ -101,12 +106,9 @@ body {
 
 
 .row-space-1 {
-
- margin-top: 6px;
-
- margin-bottom: 6px;
-
- }
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
 
 
 .row-space-2 {
