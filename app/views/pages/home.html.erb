@@ -68,7 +68,7 @@
             <p class="home-link"><b> Gratuit <br><%= link_to activity.activity_type, activity_path(activity) %></b>
           <% else %>
             <p class="home-link"><b><%= link_to activity.price, activity_path(activity) %> € <br><%= link_to activity.activity_type, activity_path(activity) %></b>
-            <br><%= link_to activity.activity_name %>                                                                                                                   , activity_path(activity) %></p>
+            <br><%= link_to activity.activity_name %></p>
           <% end %>
         </div>
       </div>
