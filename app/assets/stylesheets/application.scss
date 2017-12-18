@@ -41,7 +41,7 @@ body {
 
  font-weight: bold;
 
- background-color: #ff5a5f;
+ background-color: #5D88FE;
 
  color: #fff;
 
@@ -56,7 +56,7 @@ body {
 
  border-bottom-color: #fa0008;
 
- background-color: #ff7e82;
+ background-color: #5D88FE;
 
  outline:none;
 
@@ -65,9 +65,9 @@ body {
 
 .btn-primary.btn:active {
 
- border-color: #e00007;
+ border-color: #5D88FE;
 
- background-color: #e00007;
+ background-color: #5D88FE;
 
  outline:none;
 
@@ -376,15 +376,20 @@ input[type="checkbox"]:checked:before {
 
 
   #map{
-  height: 350px;
-  width: 100%
+  height: 400px;
+  width: 45%;
   }
 
 
 
  .map_and_address {
   height: 350px;
-  width: 50%;
+  width: 48%;
+ }
+
+ .map_unique {
+  height: 200px;
+  width: 48%;
  }
 
  .container_map {
@@ -523,11 +528,28 @@ input[type="checkbox"]:checked:before {
   width: 45%;
 }
 
-.activity_haut {
-  display: flex;
-}
-
 .container_informations {
   height: 400px;
   width: 50%;
+}
+
+#myCarousel {
+  height: 400px;
+  width: 48%;
+}
+
+.activity_haut {
+  width: 100%;
+  display: flex;
+}
+
+.informations_activity {
+  display: flex;
+}
+
+.informations_activity_2{
+  padding-left: 10px;
+}
+
+.carousel-indicators {
 }
