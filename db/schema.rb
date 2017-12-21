@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20171216161208) do
   end
 
   create_table "conversations", force: :cascade do |t|
-    t.integer "send_id"
+    t.integer "sender_id"
     t.integer "recpient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

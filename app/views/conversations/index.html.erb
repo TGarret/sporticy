@@ -13,9 +13,8 @@
               </div>
               <div class = "col-md-2">
                 <%= other.fullname %><br>
-                <%= timeago_tag conversation.message.last.created_at, :lang=>:fr %>
-<!--                 conversation.messages.last.created_at
- -->              </div>
+                <%= timeago_tag conversation.messages.last.created_at, :lang=>:fr %>
+             </div>
               <div class = "col-md-8">
                 <%= conversation.messages.last.content %>
               </div>
