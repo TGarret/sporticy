@@ -475,21 +475,21 @@ input[type="checkbox"]:checked:before {
   width:560px;
 }
 
- .btn-primary-fb.btn {
+.btn-primary-fb.btn {
 
-     border: 1px solid #4568b2;
+   border: 1px solid #4568b2;
 
-     border-radius: 2px;
+   border-radius: 2px;
 
-     font-weight: bold;
+   font-weight: bold;
 
-     background-color: #4568b2;
+   background-color: #4568b2;
 
-     color: #fff;
+   color: #fff;
 
-     padding: 10px 25px 10px 25px;
+   padding: 10px 25px 10px 25px;
 
- }
+}
 
 
 .btn-primary-fb.btn:hover, .btn-primary-fb.btn:focus {
@@ -513,6 +513,42 @@ input[type="checkbox"]:checked:before {
 
  }
 
+.btn-primary-google.btn {
+
+   border: 1px solid #4568b2;
+
+   border-radius: 2px;
+
+   font-weight: bold;
+
+   background-color: #DD4B39;
+
+   color: #fff;
+
+   padding: 10px 25px 10px 25px;
+
+}
+
+.btn-primary-google.btn:hover, .btn-primary-google.btn:focus {
+
+    border-color: #627aac;
+
+    background-color: #627aac;
+
+    outline:none;
+
+ }
+
+
+.btn-primary-google.btn:active {
+
+   border-color: #2b2eb2;
+
+   background-color: #2b2ebB2;
+
+   outline:none;
+
+ }
 
 .check_box_activity {
   display: flex;

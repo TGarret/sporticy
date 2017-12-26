@@ -2,12 +2,13 @@
   <div class="col-md-4 col-md-offset-4 text-center">
 
     <br>
+    <div class= "btn btn-primary-fb">
     <%= link_to "Connexion avec Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-primary-fb" %>
+    </div>
     <br><br>
-    <center>ou</center>
-    <hr>
-    <br>
-    <%= link_to "Connexion avec Google", class: "btn btn-primary-google" %>
+    <div class= "btn btn-primary-google">
+    <%= link_to "Connexion avec Google", user_facebook_omniauth_authorize_path, class: "btn btn-primary-google" %>
+    </div>
     <br><br>
     <center>ou</center>
     <hr>
