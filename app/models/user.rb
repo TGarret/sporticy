@@ -26,6 +26,7 @@ def self.from_omniauth(auth)
           u.email = auth.info.email
           u.image = auth.info.image
           u.password = Devise.friendly_token[0,20]
+        end
     end
  end
 
