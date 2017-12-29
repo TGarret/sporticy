@@ -1,6 +1,6 @@
 production:
 
-  cloud_name: "hfoonvife"
+  cloud_name: "hpeq287dv"
 
   api_key: "<%= ENV["CLOUDINARY_API_KEY"] %>"
 
